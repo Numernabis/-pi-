@@ -18,19 +18,19 @@ int change_base(int num, int base) {
 
 int is_Armstrong(int num, int base) {
     
-    int copy = num; //copy of given number
+    int tmp;        //just to count length of number
     int r;          //remainder
     int res = 0;    //result
     int digits = 0; //number of digits
 
-    copy = change_base(num, base);
-    while (copy != 0)
+    int copy = change_base(num, base);
+    tmp = copy;
+    while (tmp != 0)
     {
-        copy /= 10;
+        tmp /= 10;
         ++digits;
     }
 
-    copy = change_base(num, base);
     while (copy != 0)
     {
         r = copy % 10;
